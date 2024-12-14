@@ -62,5 +62,3 @@ class Code(list):
                 print("Unrecognized command:",line, "at line/occurrence", loop)
                 break
             
-code =['print.Pur Adder', 'print.What do you want to add first?', 'in.one', 'print.Add with?', 'in.two', 'avar.one.two.done', 'printv.done']
-Code.run(code)
