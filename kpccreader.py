@@ -21,9 +21,13 @@ class Code(list):
         varval = []
         code = []
         loop = 0
-        for line in lines:
-            
+        endline = 0
+        loopstart = 0
+        i = 0
+        while i < len(lines):
+            line = lines[i]
             loop += 1
+            loopm = False
             if os.path.splitext(f"{line}")[0] == "print":
                 print(os.path.splitext(f"{line}")[1])
             elif get(f"{line}")[0] == "in":
@@ -46,6 +50,7 @@ class Code(list):
             elif gets(line)[0] == "error":
                 print(f"{gets(line)[1]} error: {gets(line)[2]}")
                 break
+            
                         # elif get(line)[0] == "rmvar":
             #     if varname.index(get(line)[1]) != 0:
             #         varval.pop(varname.index(get(line)[1]))
@@ -57,7 +62,17 @@ class Code(list):
                         done = float(float(varval[varname.index(gets(line)[1])]) + float(varval[varname.index(gets(line)[2])]))
                         varname.append(gets(line)[3])
                         varval.append(done)
-                        
+            elif startwith(line, "while"):
+                loopm = True
+                loopstart = i
+                if get(line)[1] == False:
+                    loopm = False
+                    i = endline
+            elif startwith(line, "end"):
+                if loopm = False:
+                    continue
+                if loopm = True:
+                    i = loopstart
             else:
                 print("Unrecognized command:",line, "at line/occurrence", loop)
                 break
