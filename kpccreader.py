@@ -1,4 +1,6 @@
 import os
+import sys
+print(sys.argv)
 def get(stra):
     stra = str(stra)
     return os.path.splitext(stra)
@@ -25,13 +27,27 @@ class Code(list):
         loopstart = 0
         i = 0
         while i < len(lines):
+            if sys.argv[1] == "1":
+                print(i)
             line = lines[i]
+            line: str
             loop += 1
             loopm = False
+            i += 1
             if os.path.splitext(f"{line}")[0] == "print":
                 print(os.path.splitext(f"{line}")[1])
             elif get(f"{line}")[0] == "in":
                 il = input()
+                try:
+                    il: bool
+                except:
+                    try:
+                        il: int
+                    except:
+                        try:
+                            il: float
+                        except:
+                            il: str
                 varname.append(get(line)[1])
                 varval.append(il)
             elif get(f"{line}")[0] == "printv":
@@ -62,16 +78,19 @@ class Code(list):
                         done = float(float(varval[varname.index(gets(line)[1])]) + float(varval[varname.index(gets(line)[2])]))
                         varname.append(gets(line)[3])
                         varval.append(done)
-            elif startwith(line, "while"):
+            elif get(line)[0] == "while":
                 loopm = True
                 loopstart = i
                 if get(line)[1] == False:
                     loopm = False
-                    i = endline
-            elif startwith(line, "end"):
-                if loopm = False:
+                    if endline > 0:
+                        i = endline + 1
+            elif get(line)[0] == "end":
+                if not endline > 0:
+                    endline = i
+                if loopm == False:
                     continue
-                if loopm = True:
+                if loopm == True:
                     i = loopstart
             else:
                 print("Unrecognized command:",line, "at line/occurrence", loop)
