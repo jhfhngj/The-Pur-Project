@@ -48,6 +48,15 @@ print.This is some info for Pur.
 print.It was made in Pur, too.
 print.Go and watch Nutcracker tho, it's really good
 ```
+### 3. Is It True?
+
+```
+in.yes
+while.yes
+printv.yes
+in.yes
+end.
+```
 
 As there isn't many commands right now, these were the examples.
 
@@ -73,5 +82,11 @@ ifvrev.{var}.{val}.{out var}
 ```
 error.{error message}
 ```
+```
+while.{bool var}
+[COMMANDS]
+end.
+```
 
 Do what you want with Pur.
+Hope you a good line 1!
