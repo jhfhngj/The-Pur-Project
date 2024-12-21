@@ -35,7 +35,7 @@ class Code(list):
             loopm = False
             i += 1
             if os.path.splitext(f"{line}")[0] == "print":
-                print(os.path.splitext(f"{line}")[1])
+                print((os.path.splitext(f"{line}")[1]).replace(".", "", 1))
             elif get(f"{line}")[0] == "in":
                 il = input()
                 try:
