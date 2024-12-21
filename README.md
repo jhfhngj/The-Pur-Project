@@ -88,5 +88,28 @@ while.{bool var}
 end.
 ```
 
+## If you're coming from Python
+The syntax is different from your usual 2.x or 3.x
+Think of this: `print("Hello!")`
+Those () brackets, with the ""?
+That would be `print.Hello!`
+Saves you a lot of time, don't it? All for a bit of complicator.
+You might say, "What about `print({var})`?"
+That's also here.
+It would be `printv.{var}`
+`print()` is `print.`
+That `v` in `printv.`? That stands for 'var'.
+You may also say, "how do we get vars from the user? we have `{var} = input({say string})`
+We have that too. It's less stuff, but that'd be `in.{var}`
+### While loops
+`while True`?
+`while True` is `while.True`
+`while {user str to bool}`? We try to automatically convert input to what it may be, so conversion is auto, so that'd be `while.{uservar}`
+The ending for while loops, in Python is an unindent. In Pur, it doesn't use indents. To end a loop in Pur though,
+you'd do `end.` That . is just to make it know it's a function.
+### If statements
+To do `if {var} == {value}`, you would do `ifvrev.{var}.{value}.{out var}`
+But the updated `if` will come in Pur 1.2!
+
 Do what you want with Pur.
 Hope you a good line 1!
