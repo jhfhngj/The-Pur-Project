@@ -82,11 +82,23 @@ ifvrev.{var}.{val}.{out var}
 ```
 error.{error message}
 ```
+
 ```
 while.{bool var}
 [COMMANDS]
 end.
 ```
+
+```
+enable.{library}
+```
+
+## Libraries
+Style: NAME - DESC - FUNC/DFNC
+
+`git-clone` - Clone using git. - `system(f"git clone {repo}")`
+
+`pypur` - Python in Pur! - Use Python in Pur using PyPur.
 
 ## If you're coming from Python
 The syntax is different from your usual 2.x or 3.x.
@@ -97,7 +109,7 @@ Those () brackets, with the ""?
 
 That would be `print.Hello!`
 
-Saves you a lot of time, don't it? All for a bit of complicator.
+Saves you a lot of time, don't it? All for a bit of complication.
 
 You might say, "What about `print({var})`?"
 
@@ -131,7 +143,9 @@ you'd do `end.` That . is just to make it know it's a function.
 
 To do `if {var} == {value}`, you would do `ifvrev.{var}.{value}.{out var}`
 
-But the updated `if` will come in Pur 1.2!
+But the updated `if` will come in soon!
 
 Do what you want with Pur.
 Hope you a good line 1!
+
+still water, those who know:
