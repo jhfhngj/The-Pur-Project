@@ -25,6 +25,8 @@ class Code(list):
         loop = 0
         endline = 0
         loopstart = 0
+        enabled = []
+        enable = ["git-clone", "pypur"]
         i = 0
         while i < len(lines):
             if sys.argv[1] == "1":
@@ -33,6 +35,7 @@ class Code(list):
             line: str
             loop += 1
             loopm = False
+
             i += 1
             if os.path.splitext(f"{line}")[0] == "print":
                 print((os.path.splitext(f"{line}")[1]).replace(".", "", 1))
@@ -92,6 +95,18 @@ class Code(list):
                     continue
                 if loopm == True:
                     i = loopstart
+            elif get(line)[0] == "enable":
+                if enable.index(get(line)[1]) > 0:
+                    enabled.append(get(line)[1])
+            try:
+                if enabled.index(get(line)[0]) > 0:
+                    if get(line)[0] == "git-clone":
+                        os.system(f"git clone {get(line)[1]}")
+                    if get(line)[0] == "pypur":
+                        exec(get(line)[1].replace(".", "", 1))
+                    
+            except:
+                pass    
             else:
                 print("Unrecognized command:",line, "at line/occurrence", loop)
                 break
