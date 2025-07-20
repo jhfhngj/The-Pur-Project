@@ -1,4 +1,6 @@
 # The Pur Project
+is dead again. Go to The-Pur-Project-D
+
 Pur, the programming language.
 
 Pur is a programming language made in Python. Not assembly because I don't know a single bit of Assembly.
