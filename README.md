@@ -1,5 +1,5 @@
 # The Pur Project
-is dead again. Go to The-Pur-Project-D
+is dead. Go to The-Pur-Project-C
 
 Pur, the programming language.
 
